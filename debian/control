@@ -1,0 +1,30 @@
+Source: libtest-command-simple-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Joost van Baal-Ilić <joostvb@debian.org>,
+           Casper Gielen <casper-alioth@gielen.name>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper (>= 8),
+               libmodule-build-perl
+Build-Depends-Indep: perl,
+                     libtest-pod-perl,
+                     libtest-pod-coverage-perl
+Standards-Version: 3.9.6
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/libtest-command-simple-perl.git
+Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/libtest-command-simple-perl.git
+Homepage: https://metacpan.org/release/Test-Command-Simple
+
+Package: libtest-command-simple-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Description: Perl module to test external commands
+ Test::Command::Simple is a intended to simplify testing of external commands.
+ It does so by running the command under IPC::Open3, closing the stdin
+ immediately, and reading everything from the command's stdout and stderr.
+ It then makes the output available to be tested.
+ .
+ It is not (yet?) as feature-rich as Test::Cmd (in package libtest-cmd-perl),
+ however the interface to this is much simpler.  Tests also plug directly
+ into the Test::Builder framework, which plays nice with Test::More.
